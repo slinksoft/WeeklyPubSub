@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Weekly Pub Sub</string>
+    <string name="infoheader"><u>Sub On Sale Information</u></string>
+    <string name="sheader"><u>Sub</u></string>
+    <string name="pheader"><u>Sales Price</u></string>
+    <string name="dheader"><u>Sale Goes Through</u></string>
+    <string name="udheader"><u>Info. Updated On</u></string>
+</resources>

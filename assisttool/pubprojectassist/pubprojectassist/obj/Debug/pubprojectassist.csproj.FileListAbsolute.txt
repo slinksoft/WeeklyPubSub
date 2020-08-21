@@ -1,0 +1,10 @@
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\bin\Debug\pubprojectassist.exe.config
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\bin\Debug\pubprojectassist.exe
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\bin\Debug\pubprojectassist.pdb
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Debug\pubprojectassist.csprojAssemblyReference.cache
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Debug\pubprojectassist.Form1.resources
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Debug\pubprojectassist.Properties.Resources.resources
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Debug\pubprojectassist.csproj.GenerateResource.cache
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Debug\pubprojectassist.csproj.CoreCompileInputs.cache
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Debug\pubprojectassist.exe
+C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Debug\pubprojectassist.pdb
