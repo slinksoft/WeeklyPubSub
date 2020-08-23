@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         u = findViewById(R.id.udateDisplay);
         version = findViewById(R.id.vDisplay);
         ver = 1;
-        rever = 0;
+        rever = 2;
 
         version.setText("Version: " + ver + "." + rever);
         this.setTitle("Weekly Pub Sub! - Slink Soft");
@@ -221,10 +221,11 @@ public class MainActivity extends AppCompatActivity {
     {
         AlertDialog credits = new AlertDialog.Builder(MainActivity.this).create();
         credits.setTitle("Order Sub");
-        credits.setMessage("NOTE: You are about to exit the app and be forwarded to Publix.com via your web browser. You may need to enter " +
+        credits.setMessage("NOTE: You are about to access Publix.com through the the app. You may need to enter " +
                 "your local ZIP code to be able to order the sub on sale and view the promotional savings. You can do this by tapping the main menu icon " +
                 "on the website (top right 3 lines icon), then tap \"Choose a Store\" on the bottom. After choosing a store, you will be redirected " +
-                "to the order menu to proceed with your order.");
+                "to the order menu to proceed with your order.\n\nNOTE: Use the \"Back\" and \"Forward\" buttons if you need to go back to the previous page or " +
+                "return to a current page. You can take a screenshot of your order confirmation if you wish to do so.");
         credits.setButton(AlertDialog.BUTTON_NEUTRAL, "Cancel",
                 new DialogInterface.OnClickListener() {
 
@@ -236,8 +237,8 @@ public class MainActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.publix.com/shop-online/in-store-pickup/"));
-                        startActivity(browserIntent);
+                        Intent toOrder = new Intent(MainActivity.this, OrderUI.class);
+                        startActivity(toOrder);
                         dialogInterface.dismiss();
                     }
                 });
