@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         u = findViewById(R.id.udateDisplay);
         version = findViewById(R.id.vDisplay);
         ver = 1;
-        rever = 2;
+        rever = 3;
 
         version.setText("Version: " + ver + "." + rever);
         this.setTitle("Weekly Pub Sub! - Slink Soft");
@@ -76,32 +76,31 @@ public class MainActivity extends AppCompatActivity {
         final String url = "https://pubweekly.herokuapp.com/process?id=" + infoar[0] + "&price=" + infoar[1]
                 + "&date=" + infoar[2] + "&udate=" + infoar[3];
         System.out.println(url);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    URL pubweekly = new URL(url); // create URL object
-                    BufferedReader read = new BufferedReader(new InputStreamReader(pubweekly.openStream())); // created buffered reader
-                    salesinfo = read.readLine(); // read the contents of the URL
-                    System.out.println("run new thread executed with " + salesinfo);
-                    read.close(); // close buffered reader
 
-                    String[] salesinfoar = salesinfo.split(",");
-                    sub = salesinfoar[0];
-                    price = salesinfoar[1];
-                    date = salesinfoar[2];
-                    udate = salesinfoar[3];
-                    onSuccessToast();
-                    updateUI();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        URL pubweekly = new URL(url); // create URL object
+                        BufferedReader read = new BufferedReader(new InputStreamReader(pubweekly.openStream())); // created buffered reader
+                        salesinfo = read.readLine(); // read the contents of the URL
+                        System.out.println("run new thread executed with " + salesinfo);
+                        read.close(); // close buffered reader
 
-                } catch (Exception e) {
-                    System.out.println("exception: " + e);
-                    onErrorToast();
+                        String[] salesinfoar = salesinfo.split(",");
+                        sub = salesinfoar[0];
+                        price = salesinfoar[1];
+                        date = salesinfoar[2];
+                        udate = salesinfoar[3];
+                        onSuccessToast();
+                        updateUI();
+
+                    } catch (Exception e) {
+                        System.out.println("exception: " + e);
+                        onErrorToast();
+                    }
                 }
-            }
-        }).start();
-
-
+            }).start();
     }
 
     private void updateUI()
@@ -221,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
     {
         AlertDialog credits = new AlertDialog.Builder(MainActivity.this).create();
         credits.setTitle("Order Sub");
-        credits.setMessage("NOTE: You are about to access Publix.com through the the app. You may need to enter " +
+        credits.setMessage("NOTE: You are about to access Publix.com through the app. You may need to enter " +
                 "your local ZIP code to be able to order the sub on sale and view the promotional savings. You can do this by tapping the main menu icon " +
                 "on the website (top right 3 lines icon), then tap \"Choose a Store\" on the bottom. After choosing a store, you will be redirected " +
                 "to the order menu to proceed with your order.\n\nNOTE: Use the \"Back\" and \"Forward\" buttons if you need to go back to the previous page or " +
