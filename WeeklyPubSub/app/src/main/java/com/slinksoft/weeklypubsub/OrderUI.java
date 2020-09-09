@@ -22,7 +22,10 @@ public class OrderUI extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_u_i);
+        // store browser UI reference in respective variable to be able to call its methods
         browser = findViewById(R.id.orderWebView);
+
+        // set necessary options for Publix.com to function in WebView reference
         browser.setWebViewClient(new WebViewClient());
         browser.getSettings().setJavaScriptEnabled(true);
         browser.getSettings().setDomStorageEnabled(true);
@@ -35,6 +38,7 @@ public class OrderUI extends AppCompatActivity {
         browser.loadUrl("https://www.publix.com/shop-online/in-store-pickup/");
     }
 
+    // close activity, go back to main activity
     public void onBackClick(View v)
     {
         finish();
@@ -51,14 +55,14 @@ public class OrderUI extends AppCompatActivity {
     }
 
     public void takeScreenshot(View v) {
-        Date now = new Date();
-        android.text.format.DateFormat.format("yyyy-MM-dd_hh:mm:ss", now);
+        Date now = new Date(); // create date object for screenshot file name usage
+        android.text.format.DateFormat.format("yyyy-MM-dd_hh:mm:ss", now); // get current date and time
 
         try {
-            // create bitmap screen capture
+            // take screenshot
             View v1 = getWindow().getDecorView().getRootView();
             v1.setDrawingCacheEnabled(true);
-            // take screenshot
+            // create bitmap to store screen capture
             Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
             v1.setDrawingCacheEnabled(false);
 

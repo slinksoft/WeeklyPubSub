@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // store UI references in respective variables to be able to call their methods
         s = findViewById(R.id.subDisplay);
         p = findViewById(R.id.priceDisplay);
         d = findViewById(R.id.dateDisplay);
@@ -35,11 +36,13 @@ public class MainActivity extends AppCompatActivity {
         ver = 1;
         rever = 3;
 
+        // set version in UI
         version.setText("Version: " + ver + "." + rever);
         this.setTitle("Weekly Pub Sub! - Slink Soft");
+        // start accessing API to receive sales info
         try {
             Toast.makeText(getApplicationContext(), "Loading sales info...", Toast.LENGTH_SHORT).show();
-            acesssWebApp();
+            acesssWebApp(); // call to start info fetch process
         } catch (Exception e) {
             e.printStackTrace();
             onErrorToast();
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     information = read.readLine(); // read the contents of the URL
                     System.out.println("run new thread executed with " + information);
                     read.close(); // close buffered reader
-                    processSaleInfo(information);
+                    processSaleInfo(information); // call to access 2nd part of API to process retrieved info
                 } catch (Exception e) {
 
                     System.out.println("exception: " + e);
@@ -72,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void processSaleInfo(String info)
     {
-        final String[] infoar = info.split(",");
+        final String[] infoar = info.split(","); // store info into array, splitting the info respectively
+        // create url to 2nd part of API; using info to send a request for the API to process and output the final sales info
         final String url = "https://pubweekly.herokuapp.com/process?id=" + infoar[0] + "&price=" + infoar[1]
                 + "&date=" + infoar[2] + "&udate=" + infoar[3];
         System.out.println(url);
@@ -87,13 +91,14 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("run new thread executed with " + salesinfo);
                         read.close(); // close buffered reader
 
+                        // store final info in array, splitting each piece of info respectively
                         String[] salesinfoar = salesinfo.split(",");
                         sub = salesinfoar[0];
                         price = salesinfoar[1];
                         date = salesinfoar[2];
                         udate = salesinfoar[3];
-                        onSuccessToast();
-                        updateUI();
+                        onSuccessToast(); // call Handler thread to display success message
+                        updateUI(); // call Handler thread to update the UI accordingly
 
                     } catch (Exception e) {
                         System.out.println("exception: " + e);
@@ -111,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             public void run()
             {
                 s.setText(sub);
-                p.setText("$" +price);
+                p.setText("$" + price);
                 d.setText(date);
                 u.setText(udate);
             }
@@ -120,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void reloadInfo(View v)
     {
+        // reload sales info, starting the info fetch process from the API again
         try {
             Toast.makeText(getApplicationContext(), "Loading sales info...", Toast.LENGTH_SHORT).show();
             acesssWebApp();
@@ -185,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        // navigates user to my portfolio upon click of the button
                         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://realslinksoft.wixsite.com/slink-soft-portfolio"));
                         startActivity(browserIntent);
                         dialogInterface.dismiss();
@@ -236,6 +243,7 @@ public class MainActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        // navigates user to order Activity to order a sub
                         Intent toOrder = new Intent(MainActivity.this, OrderUI.class);
                         startActivity(toOrder);
                         dialogInterface.dismiss();
