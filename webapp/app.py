@@ -73,6 +73,8 @@ def process():
         sub = "Pub. Egg Salad"
     elif (id == "29"):
         sub = "Pub. Cuban"
+    elif (id == "30"):
+        sub = "Pub. Turkey Cranberry Holiday Sub"
     else:
         sub = "Invalid ID for sub"
         price = "N/A"
