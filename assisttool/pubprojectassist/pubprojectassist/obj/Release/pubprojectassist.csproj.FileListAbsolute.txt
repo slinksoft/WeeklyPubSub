@@ -7,3 +7,13 @@ C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj
 C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.csproj.CoreCompileInputs.cache
 C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.exe
 C:\Users\Dan\Desktop\PubProject\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.pdb
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\bin\Release\pubprojectassist.exe.config
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\bin\Release\pubprojectassist.exe
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\bin\Release\pubprojectassist.pdb
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.csprojAssemblyReference.cache
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.Form1.resources
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.Properties.Resources.resources
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.csproj.GenerateResource.cache
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.csproj.CoreCompileInputs.cache
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.exe
+D:\Official Portfolio\Programming\PubProject\github repo\assisttool\pubprojectassist\pubprojectassist\obj\Release\pubprojectassist.pdb
