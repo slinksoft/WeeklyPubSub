@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
+
 namespace pubprojectassist
 {
     public partial class Form1 : Form
@@ -39,5 +41,10 @@ namespace pubprojectassist
             date.Text = DateTime.Today.ToString("M/dd/yyyy") + " - " + DateTime.Today.AddDays(6).ToString("M/dd/yyyy");
             udate.Text = DateTime.Today.ToString("M/dd/yyyy");
         }
-    }
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+            Process.Start("webapp\\bash.bat");
+		}
+	}
 }
