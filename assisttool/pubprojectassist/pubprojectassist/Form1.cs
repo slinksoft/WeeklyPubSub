@@ -26,7 +26,7 @@ namespace pubprojectassist
             {
                 StreamWriter write = new StreamWriter("webapp\\templates\\index.html");
                 // combo box for sub id aligns up with the sub ids on the python flask web app, therefore, just writing the selected index works
-                write.Write(subID.SelectedIndex + "," + price.Text + "," + date.Text + "," + udate.Text);
+                write.Write(subID.SelectedIndex + ",-," + price.Text + ",-," + date.Text + ",-," + udate.Text);
                 write.Close();
                 MessageBox.Show("success");
             }

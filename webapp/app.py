@@ -2,16 +2,18 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/process')
 def process():
     id = request.args.get('id')
     price = request.args.get('price')
     date = request.args.get('date')
-    updated = request.args.get('udate');
+    updated = request.args.get('udate')
     sub = ""
     if (id == "0"):
         sub = "Chicken Tender"
@@ -74,13 +76,18 @@ def process():
     elif (id == "29"):
         sub = "Pub. Cuban"
     elif (id == "30"):
-        sub = "Pub. Turkey Cranberry Holiday Sub"
+        sub = "Pub. Turkey Cranberry Holiday"
+    elif (id == "31"):
+        sub = "Boar's Head Southern BBQ Pitcraft Turkey"
+    elif (id == "619"):
+        sub = "619"
+
     else:
         sub = "Invalid ID for sub"
         price = "N/A"
         date = "N/A"
-    
-    return sub + "," + price + "," + date + "," + updated
+
+    return sub + ",-," + price + ",-," + date + ",-," + updated
 
 if __name__ == '__main__':
     app.debug = True

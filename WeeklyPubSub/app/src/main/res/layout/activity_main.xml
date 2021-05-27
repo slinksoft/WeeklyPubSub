@@ -162,7 +162,7 @@
         android:id="@+id/orderB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="orderSub"
+        android:onClick="onClickOrderSub"
         android:text="Order Sub"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
